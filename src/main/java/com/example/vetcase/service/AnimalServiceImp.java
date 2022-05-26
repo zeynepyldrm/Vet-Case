@@ -13,7 +13,10 @@ public class AnimalServiceImp implements AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
     @Override
-    public List<Animal> getAllAnimals() {
+    public List<Animal> getAllAnimals(String keyword) {
+        if(keyword!=null){
+            return  animalRepository.findByKeyword(keyword);
+        }
         return animalRepository.findAll();
     }
 

@@ -6,19 +6,18 @@ import com.example.vetcase.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class AnimalController {
     @Autowired
     private AnimalService animalService;
 
-    @GetMapping("/animals")
-    public  String viewAnimalPage(Model model){
-        model.addAttribute("listAnimals",animalService.getAllAnimals());
+    @RequestMapping(path = {"/animals","/animals/search"})
+    public  String viewAnimalPage(Animal animal,Model model,String keyword){
+        model.addAttribute("listAnimals",animalService.getAllAnimals(keyword));
         return "animals";
     }
     @GetMapping("/animals/edit/{id}")
