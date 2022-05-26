@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title> VetCase</title>
+</head>
+<body>
+<div class="container">
+  <h1>VetCase</h1>
+  <hr>
+  <h5>Update Animal</h5>
+  <form action="#" th:action="@{/animals/save}" th:object="${animal}" ,method="POST">
+    <input type="hidden" th:field="*{id}"/>
+    <input type="text" th:field="*{name}" placeholder=" Name" class="form-control mb-2 col-4" >
+    <input type="text" th:field="*{type}"  placeholder="Type lastName" class="form-control mb-2 col-4" >
+    <input type="text" th:field="*{age}" placeholder="Age" class="form-control mb-2 col-4" >
+    <input type="text" th:field="*{genus}" placeholder="Genus" class="form-control mb-2 col-4" >
+    <input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-2 col-4" >
+    <input type="hidden" th:field="*{owner.id}" class="form-control mb-2 col-4"/>
+    <input type="text" th:field="*{owner.lastName}"  disabled="true" class="form-control mb-2 col-4"/>
+    <input type="text" th:field="*{owner.firstName}" disabled="true" class="form-control mb-2 col-4"/>
+    <input type="text" th:field="*{owner.phone}" class="form-control mb-4 col-4"/>
+    <input type="text" th:field="*{owner.email}" class="form-control mb-4 col-4"/>
+    <button type="submit" class="btn btn-info col-2">Save Employee</button>
+  </form>
+  <hr>
+  <a th:href="@{/animals}">Back to Animals List</a>
+</div>
+</body>
+</body>
+</html>
