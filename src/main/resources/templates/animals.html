@@ -30,7 +30,9 @@
             <td>[[${animal.description}]]</td>
             <td>[[${animal.owner.firstName+" "+animal.owner.lastName}]]</td>
             <td>
+                <a th:href="@{/animals/detail/{id}(id=${animal.id})}" class="btn btn-primary">Det</a>
                 <a th:href="@{/animals/edit/{id}(id=${animal.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/animals/delete/{id}(id=${animal.id})}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         </th:block>

@@ -8,5 +8,6 @@ public interface AnimalService {
     List<Animal> getAllAnimals();
     void saveAnimal(Animal animal);
     Animal getAnimalById(int id);
+    void deleteAnimal(int id);
 
 }

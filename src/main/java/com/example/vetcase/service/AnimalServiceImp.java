@@ -33,4 +33,8 @@ public class AnimalServiceImp implements AnimalService {
         }
         return  animal;
     }
+    @Override
+    public void deleteAnimal(int id) {
+        this.animalRepository.deleteById(id);
+    }
 }

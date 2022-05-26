@@ -32,5 +32,10 @@ public class AnimalController {
         this.animalService.saveAnimal(animal);
         return "redirect:/animals";
     }
+    @GetMapping("/animals/delete/{id}")
+    public String deleteAnimal(@PathVariable(name = "id" )int id){
+        this.animalService.deleteAnimal(id);
+        return "redirect:/animals";
+    }
 
 }
