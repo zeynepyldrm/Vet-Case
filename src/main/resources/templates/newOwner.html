@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<th:block th:replace="partials/header"></th:block>
+<body>
+<div class="container">
+  <h2>New Owner</h2>
+  <form action="#" th:action="@{/owners/save}" th:object="${owner}",method="POST">
+    <input type="text" th:field="*{firstName}" placeholder=" First Name" class="form-control mb-4 col-4" >
+    <input type="text" th:field="*{lastName}"  placeholder=" Last Name" class="form-control mb-4 col-4" >
+    <input type="text" th:field="*{email}" placeholder=" email" class="form-control mb-4 col-4" >
+    <input type="text" th:field="*{phone}" placeholder="Phone" class="form-control mb-4 col-4" >
+    <button type="submit" class="btn btn-info col-2">Save Owner</button>
+  </form>
+</div>
+</body>
+</html>

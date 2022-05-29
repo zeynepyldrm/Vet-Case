@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<th:block th:replace="partials/header"></th:block>
+<body>
+<div class="container">
+    <th:block th:replace="partials/nav"></th:block>
+    <h5>Update Animal</h5>
+    <form action="#" th:action="@{/owners/save}" th:object="${owner}" ,method="POST">
+        <input type="hidden" th:field="*{id}"/>
+        <input type="text" th:field="*{lastName}" class="form-control mb-2 col-4"/>
+        <input type="text" th:field="*{firstName}" class="form-control mb-2 col-4"/>
+        <input type="text" th:field="*{phone}" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{email}" class="form-control mb-4 col-4"/>
+        <button type="submit" class="btn btn-info col-2">Save Owner</button>
+    </form>
+    <hr>
+    <a th:href="@{/owners}">Back to Owners List</a>
+</div>
+</body>
+</body>
+</html>
