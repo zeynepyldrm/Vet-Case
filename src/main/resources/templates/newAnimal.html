@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+
+<th:block th:replace="partials/header"></th:block>
+<body>
+<div class="container">
+    <h2>New Animals</h2>
+    <form action="#" th:action="@{/animals/save}" th:object="${animal}",method="POST">
+        <input type="text" th:field="*{name}" placeholder=" Name" class="form-control mb-4 col-4" >
+        <input type="text" th:field="*{type}"  placeholder="Type" class="form-control mb-4 col-4" >
+        <input type="text" th:field="*{genus}" placeholder="genus" class="form-control mb-4 col-4" >
+        <input type="text" th:field="*{age}" placeholder="age" class="form-control mb-4 col-4" >
+        <input type="text" th:field="*{description}" placeholder="desc" class="form-control mb-4 col-4" >
+       <select name="owner" id="owner" class="form-control mb-4 col-4">
+           <option th:each="owner:${listOwners}" th:text="${owner.firstName}" th:value="${owner.id}"></option>
+       </select>
+        <button type="submit" class="btn btn-info col-2">Save Owner</button>
+        <a th:href="@{/showNewOwnerForm}">New Owner ? </a>
+    </form>
+</div>
+</body>
+</html>
