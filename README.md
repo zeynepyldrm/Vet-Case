@@ -32,7 +32,7 @@ Deployed with Azure VPS
 ```sh
   docker run -p 3306:3306 <image_id> --detach
 ```
-4- Clone this java repos and run the project
+4- Clone this java repo and run the project
 ```sh
  https://github.com/zeynepyldrm/Vet-Case
  mvn spring-boot:run 
